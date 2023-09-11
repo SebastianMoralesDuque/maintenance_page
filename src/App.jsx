@@ -11,13 +11,15 @@ export default function App() {
   const developers = [
     {
       id: 1,
-      name: 'Desarrollador A',
+      name: 'Project Manager',
       image: 'img/perfil1.jpg',
+      linkedin: 'https://www.linkedin.com/in/linkedin-username1/',
     },
     {
       id: 2,
-      name: 'Desarrollador B',
+      name: 'QA Analyst',
       image: 'img/perfil2.jpg',
+      linkedin: 'https://www.linkedin.com/in/linkedin-username2/',
     },
   ];
 
@@ -69,7 +71,9 @@ export default function App() {
       </div>
 
       <div className="mt-8">
-        <h2 className="text-2xl text-yellow-500 mb-4">¡Decide a quién despedimos!</h2>
+        <div className="text-center mb-4">
+          <h2 className="text-2xl text-yellow-500">¡Decide a quién despedimos!</h2>
+        </div>
         <div className="flex justify-center space-x-4">
           {developers.map((developer) => (
             <div key={developer.id} className="text-center">
@@ -79,12 +83,17 @@ export default function App() {
                 className="w-32 h-32 rounded-full mb-2"
               />
               <p>{developer.name}</p>
-              <button
-                onClick={() => handleDeveloperSelection(developer)}
-                className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full mt-2"
-              >
-                Despedir
-              </button>
+              <div className="flex flex-col items-center">
+                <a href={developer.linkedin} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline mb-2">
+                  Ver perfil de LinkedIn
+                </a>
+                <button
+                  onClick={() => handleDeveloperSelection(developer)}
+                  className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full"
+                >
+                  Despedir
+                </button>
+              </div>
             </div>
           ))}
         </div>
@@ -112,3 +121,4 @@ function SocialIcon({ url, icon, label }) {
     </a>
   );
 }
+
