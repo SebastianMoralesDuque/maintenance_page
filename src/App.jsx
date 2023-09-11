@@ -1,11 +1,34 @@
-
+import React, { useState } from 'react';
 import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
 
 export default function App() {
+  const [developerToFire, setDeveloperToFire] = useState(null);
+
+  const handleDeveloperSelection = (developer) => {
+    setDeveloperToFire(developer);
+  };
+
+  const developers = [
+    {
+      id: 1,
+      name: 'Desarrollador A',
+      image: 'img/perfil1.jpg',
+    },
+    {
+      id: 2,
+      name: 'Desarrollador B',
+      image: 'img/perfil2.jpg',
+    },
+  ];
+
   return (
-    <div className="bg-gray-900 min-h-screen flex flex-col justify-center items-center text-white">
+    <div className="bg-white min-h-screen flex flex-col justify-center items-center text-black">
       <div className="flex flex-col items-center space-y-4">
-        <img className="w-32 animate-pulse" src="tu_logo.png" alt="Tu Logo" />
+        <img
+          className="animate-pulse"
+          src="img/logo.png"
+          alt="Tu Logo"
+        />
 
         <h1 className="text-4xl text-red-500 animate-bounce">
           ¡Nuestros Aviones Están en Mantenimiento!
@@ -45,8 +68,33 @@ export default function App() {
         </div>
       </div>
 
-      <div className="mt-8 flex items-center justify-center">
-        <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-12 w-12"></div>
+      <div className="mt-8">
+        <h2 className="text-2xl text-yellow-500 mb-4">¡Decide a quién despedimos!</h2>
+        <div className="flex justify-center space-x-4">
+          {developers.map((developer) => (
+            <div key={developer.id} className="text-center">
+              <img
+                src={developer.image}
+                alt={developer.name}
+                className="w-32 h-32 rounded-full mb-2"
+              />
+              <p>{developer.name}</p>
+              <button
+                onClick={() => handleDeveloperSelection(developer)}
+                className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full mt-2"
+              >
+                Despedir
+              </button>
+            </div>
+          ))}
+        </div>
+        {developerToFire ? (
+          <p className="text-lg mt-4">
+            ¡{developerToFire.name} ha sido despedido! ¡Esperamos que esto no haya sido muy difícil para él/ella!
+          </p>
+        ) : (
+          <p className="text-lg mt-4">Nadie ha sido despedido todavía. ¡Anímate a elegir a uno!</p>
+        )}
       </div>
     </div>
   );
