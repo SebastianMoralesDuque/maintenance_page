@@ -1,4 +1,3 @@
-
 import { FaInstagram, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 
 function SocialIcon({ url, icon, label }) {
@@ -16,23 +15,23 @@ function SocialIcon({ url, icon, label }) {
 
 function App() {
   return (
-    <div className="bg-white min-h-screen flex flex-col justify-center items-center text-black">
+    <div className="bg-white min-h-screen flex flex-col justify-center items-center text-black p-4">
       <div className="flex flex-col items-center space-y-4">
         <img
-          className="animate-pulse"
-          src="img/logo.png"
+          className="animate-pulse w-48 h-48"
+          src="/dist/img/logo.png"
           alt="Tu Logo"
         />
 
-        <h1 className="text-4xl text-red-500 animate-bounce">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl text-red-500 animate-bounce">
           ¡Nuestros Aviones Están en Mantenimiento!
         </h1>
 
-        <p className="text-lg">
+        <p className="text-lg sm:text-xl md:text-lg">
           Estamos ocupados puliendo nuestras alas y ajustando nuestros motores para llevarte a nuevos destinos increíbles.
         </p>
 
-        <p className="text-lg">
+        <p className="text-lg sm:text-xl md:text-lg">
           Volveremos a volar en poco tiempo. Si tienes alguna pregunta sobre tus próximas aventuras, ¡no dudes en{' '}
           <a
             className="text-yellow-500 hover:text-blue-500"
@@ -43,7 +42,7 @@ function App() {
           !
         </p>
 
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 mt-4">
           <SocialIcon
             url="https://www.instagram.com/marsuenosviajes/"
             icon={<FaInstagram className="mr-2" />}
