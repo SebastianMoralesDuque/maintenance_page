@@ -11,15 +11,13 @@ export default function App() {
   const developers = [
     {
       id: 1,
-      name: 'Project Manager',
+      name: 'Desarrollador A',
       image: 'img/perfil1.jpg',
-      linkedin: 'https://www.linkedin.com/in/linkedin-username1/',
     },
     {
       id: 2,
-      name: 'QA Analyst',
+      name: 'Desarrollador B',
       image: 'img/perfil2.jpg',
-      linkedin: 'https://www.linkedin.com/in/linkedin-username2/',
     },
   ];
 
@@ -69,35 +67,6 @@ export default function App() {
           />
         </div>
       </div>
-
-      <div className="mt-8">
-        <h2 className="text-2xl text-yellow-500 mb-4">¡Decide a quién despedimos!</h2>
-        <div className="flex justify-center space-x-4">
-          {developers.map((developer) => (
-            <div key={developer.id} className="text-center">
-              <img
-                src={developer.image}
-                alt={developer.name}
-                className="w-32 h-32 rounded-full mb-2"
-              />
-              <p>{developer.name}</p>
-              <button
-                onClick={() => handleDeveloperSelection(developer)}
-                className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full mt-2"
-              >
-                Despedir
-              </button>
-            </div>
-          ))}
-        </div>
-        {developerToFire ? (
-          <p className="text-lg mt-4">
-            ¡{developerToFire.name} ha sido despedido! ¡Esperamos que esto no haya sido muy difícil para él/ella!
-          </p>
-        ) : (
-          <p className="text-lg mt-4">Nadie ha sido despedido todavía. ¡Anímate a elegir a uno!</p>
-        )}
-      </div>
     </div>
   );
 }
@@ -114,4 +83,3 @@ function SocialIcon({ url, icon, label }) {
     </a>
   );
 }
-
