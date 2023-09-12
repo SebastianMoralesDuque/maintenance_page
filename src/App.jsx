@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { FaInstagram, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 
 function SocialIcon({ url, icon, label }) {
