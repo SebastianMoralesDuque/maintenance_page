@@ -13,7 +13,7 @@ export default function App() {
       id: 1,
       name: 'Project Manager',
       image: 'img/perfil1.jpg',
-      linkedin: 'https://www.linkedin.com/in/linkedin-username1/',
+      linkedin: 'https://www.linkedin.com/in/daniel-morales-1966531a7/',
     },
     {
       id: 2,
