@@ -1,27 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FaInstagram, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 
-export default function App() {
-  const [developerToFire, setDeveloperToFire] = useState(null);
+function SocialIcon({ url, icon, label }) {
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-blue-500 flex items-center"
+    >
+      {icon} {label}
+    </a>
+  );
+}
 
-  const handleDeveloperSelection = (developer) => {
-    setDeveloperToFire(developer);
-  };
-
-  const developers = [
-    {
-      id: 1,
-      name: 'Desarrollador A',
-      image: 'img/perfil1.jpg',
-      linkedin: 'https://www.linkedin.com/in/linkedin-username1/',
-    },
-    {
-      id: 2,
-      name: 'Desarrollador B',
-      image: 'img/perfil2.jpg',
-    },
-  ];
-
+function App() {
   return (
     <div className="bg-white min-h-screen flex flex-col justify-center items-center text-black">
       <div className="flex flex-col items-center space-y-4">
@@ -42,7 +35,7 @@ export default function App() {
         <p className="text-lg">
           Volveremos a volar en poco tiempo. Si tienes alguna pregunta sobre tus próximas aventuras, ¡no dudes en{' '}
           <a
-            className="text-yellow-500 hover:bg-white hover:text-blue-500"
+            className="text-yellow-500 hover:text-blue-500"
             href="mailto:Ventasmarsuenos@gmail.com"
           >
             contactarnos
@@ -72,15 +65,4 @@ export default function App() {
   );
 }
 
-function SocialIcon({ url, icon, label }) {
-  return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="hover:text-blue-500 flex items-center"
-    >
-      {icon} {label}
-    </a>
-  );
-}
+export default App;
